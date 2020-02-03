@@ -267,6 +267,7 @@ var controller = {
         { "lang": { "$regex": searchString, "$options": "i" } }
       ]
     })
+    .populate('user')
     .sort([["date", "descending"]])
     .exec((err, topics) => {
       console.log();
